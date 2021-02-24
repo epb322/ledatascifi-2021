@@ -1,0 +1,78 @@
+#####################################################
+# copy this into a notebook file
+#####################################################
+
+# copied from 3.3.4.1
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+# these three are used to download the file
+from io import BytesIO
+from zipfile import ZipFile
+from urllib.request import urlopen
+
+url = 'https://github.com/LeDataSciFi/ledatascifi-2021/blob/main/data/CCM_cleaned_for_class.zip?raw=true'
+
+#firms = pd.read_stata(url)   
+# <-- that code would work, but GH said it was too big and
+# forced me to zip it, so here is the work around to download it:
+
+with urlopen(url) as request:
+    data = BytesIO(request.read())
+
+with ZipFile(data) as archive:
+    with archive.open(archive.namelist()[0]) as stata:
+        ccm = pd.read_stata(stata)
+       
+#####################################################
+
+ccm # shape: ?
+    # unit:  ?
+    
+# 3.3.3.1:
+# What kinds of questions can I ask? Generally, questions about data fall into two bins:
+#     What type of variation occurs within a variable? Ex: Distributions, time trends
+#          Outliers, time trends, group differences
+#     What type of variation occurs between variables?2 Ex: Scatterplots, plots-by-group
+#          Relationships, relatinoships that vary by group
+
+# reasonable steps
+#    Explore variation within variables (distributions)
+#    Explore covariation between variables
+#    Explore how distributions depends on groups
+#    Explore how covariation depends on groups
+
+# tips for making a single figure
+#     Start with simple graphs, and then build in and layer on "complications" and features.
+#     Really compare your code with the syntax in the documentation. Understanding what each parameters does and needs is essential.
+#
+#         SNS (usually) LIKES LONG DATA FOR MOST PLOTS, PANDAS (usually) LIKES WIDE. (some caveats)
+#         I format my data long, and if I want a pandas plot, I use "unstack" to make it wide
+#
+#     Triple check for typos, unclosed parentheses and the like
+#     What chart should I use (with sns examples) and more help on how can I make it
+#     The seaborn tutorial page is excellent: https://seaborn.pydata.org/tutorial.html
+
+# practice time
+#    
+# Bai Hao (@baihao44) and Connor (@ConnorKressler): Create a histogram of the xrd_a variable
+# Carly (@carlydiscolo): Create a boxplot of the capx_a variable
+# Andrew (@akz220): Plot the density of the cash_a variable
+#
+#     distributions (displot and boxplot, .plot())
+#         work through parameters
+#         tricks: query in data argument
+#     covariances (many vars: pairplot, heatmap
+#                  two vars in detail: scatterplot, lmplot, jointplot)
+#         work through parameters
+#         tip: not too many variables for pairplot
+#         tricks: in any scatter plot: sample to avoid oversaturation
+#     groups - show displot and jointplot with groups
+#         Useful parameters: hue, row, style, col
+#         Bin / cut continuous vars to create discrete groups
+    
+# customization
+# example: the final heatmap in 3.3.4.3.2
+
