@@ -131,5 +131,10 @@
         - file: "content/03/04e-visualEDA"
         - file: "content/03/04f-betterplots"
 #        - file: "content/03/04g-lyingfigures"
+    - file: "content/03/05a-otherskills"
+      sections:
+        - file: "content/03/05b_merging"
+#         - file: "content/03/05c_missingdata"
+#         - file: "content/03/05d_outliers"
      
       
