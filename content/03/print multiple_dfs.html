@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>A side lesson: What on earth is lambda? &#8212; LeDataSciFi-2021</title>
+    <title>&lt;no title&gt; &#8212; LeDataSciFi-2021</title>
     
   <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -391,6 +391,25 @@
     <i class="fas fa-chevron-down">
     </i>
    </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="05a-otherskills.html">
+     3.4. Other (Important) Data Wrangling Skills
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="05b_merging.html">
+       3.4.1. Merging
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="05c_missingdata.html">
+       3.4.2. Dealing with Missing Data
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
   </ul>
   <i class="fas fa-chevron-down">
   </i>
@@ -431,7 +450,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/content/03/old 2.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/content/03/print multiple_dfs.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -451,10 +470,10 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/LeDataSciFi/ledatascifi-2021/issues/new?title=Issue%20on%20page%20%2Fcontent/03/old 2.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/LeDataSciFi/ledatascifi-2021/issues/new?title=Issue%20on%20page%20%2Fcontent/03/print multiple_dfs.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/LeDataSciFi/ledatascifi-2021/edit/main/content/03/old 2.ipynb"><button
+        <a class="edit-button" href="https://github.com/LeDataSciFi/ledatascifi-2021/edit/main/content/03/print multiple_dfs.ipynb"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -474,7 +493,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/LeDataSciFi/ledatascifi-2021/main?urlpath=lab/tree/content/03/old 2.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/LeDataSciFi/ledatascifi-2021/main?urlpath=lab/tree/content/03/print multiple_dfs.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../_static/images/logo_binder.svg"
@@ -482,7 +501,7 @@
         
         
         
-        <a class="colab-button" href="https://colab.research.google.com/github/LeDataSciFi/ledatascifi-2021/blob/main/content/03/old 2.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+        <a class="colab-button" href="https://colab.research.google.com/github/LeDataSciFi/ledatascifi-2021/blob/main/content/03/print multiple_dfs.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
                 title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
                     src="../../_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
@@ -500,25 +519,7 @@
             <i class="fas fa-list"></i> Contents
         </div>
         <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   A side lesson: What on earth is
-   <strong>
-    <code class="docutils literal notranslate">
-     <span class="pre">
-      lambda
-     </span>
-    </code>
-   </strong>
-   ?
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#maybe-you-say-i-hate-that-and-will-never-ever-write-a-lambda-how-can-i-accomplish-the-problem-above-anyways">
-   Maybe you say “I hate that and will never ever write a lambda. How can I accomplish the problem above anyways?”
-  </a>
- </li>
+            <ul class="simple nav section-nav flex-column">
 </ul>
 
         </nav>
@@ -532,185 +533,29 @@
                 
   <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">pandas_datareader</span> <span class="k">as</span> <span class="nn">pdr</span> <span class="c1"># IF NECESSARY, from terminal: pip install pandas_datareader </span>
-<span class="kn">import</span> <span class="nn">datetime</span>
-<span class="kn">import</span> <span class="nn">datadotworld</span> <span class="k">as</span> <span class="nn">dw</span> <span class="c1"># follow instructions for installing and using dw in accompanying lecture</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="section" id="a-side-lesson-what-on-earth-is-lambda">
-<h1>A side lesson: What on earth is <strong><code class="docutils literal notranslate"><span class="pre">lambda</span></code></strong>?<a class="headerlink" href="#a-side-lesson-what-on-earth-is-lambda" title="Permalink to this headline">¶</a></h1>
-<p>Can you survive without learning <code class="docutils literal notranslate"><span class="pre">lambda</span></code>? Yes.</p>
-<p>But knowing <code class="docutils literal notranslate"><span class="pre">lambda</span></code> will make you a more powerful programmer, because it lets you define functions very quickly. And this is very useful! For example, the <code class="docutils literal notranslate"><span class="pre">agg</span></code> function can apply any function, not just built-in ones, and sometimes you’ll want to use non built-in functions!</p>
-<p>So, generally, the syntax is <code class="docutils literal notranslate"><span class="pre">&lt;fcn_name&gt;</span> <span class="pre">=</span> <span class="pre">lambda</span> <span class="pre">&lt;argument&gt;</span> <span class="pre">:</span> <span class="pre">&lt;function&gt;</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_fcn</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">a</span> <span class="p">:</span> <span class="n">a</span><span class="o">*</span><span class="mi">5</span> <span class="c1"># if I call my_fcn(7), python will set a=7, then evalute the function a*5</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">my_fcn</span><span class="p">(</span><span class="mi">7</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>35
-</pre></div>
-</div>
-</div>
-</div>
-<p>Now, in the example above inside <code class="docutils literal notranslate"><span class="pre">agg()</span></code> I never named the function. That’s because it’s unnecessary in that context, python knows to immediately call it.</p>
-</div>
-<div class="section" id="maybe-you-say-i-hate-that-and-will-never-ever-write-a-lambda-how-can-i-accomplish-the-problem-above-anyways">
-<h1>Maybe you say “I hate that and will never ever write a lambda. How can I accomplish the problem above anyways?”<a class="headerlink" href="#maybe-you-say-i-hate-that-and-will-never-ever-write-a-lambda-how-can-i-accomplish-the-problem-above-anyways" title="Permalink to this headline">¶</a></h1>
-<p>Well, I’m sorry to hear that! Here is what you could do:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">return_first_element</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">multi_table</span><span class="p">(</span><span class="n">table_list</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39; Accepts DFs and prints them side-by-side, with some space in between.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="kn">from</span> <span class="nn">IPython.core.display</span> <span class="kn">import</span> <span class="n">HTML</span>
+    
+    <span class="k">return</span> <span class="n">HTML</span><span class="p">(</span><span class="s1">&#39;&lt;table&gt;&lt;tr &gt;&#39;</span> <span class="o">+</span> 
+        <span class="s1">&#39;&lt;tr &gt; &#39;</span> <span class="o">+</span>        
+        <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s1">&#39;&lt;td rowspan=&quot;&#39;</span>                <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">table</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span> 
+                 <span class="s1">&#39;&quot; style=&quot;text-align:center;&quot;&gt;&#39;</span><span class="o">+</span> <span class="n">table</span><span class="o">.</span><span class="n">name</span><span class="o">+</span> 
+                 <span class="s1">&#39;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/td&gt;&#39;</span>
+                 <span class="k">for</span> <span class="n">table</span> <span class="ow">in</span> <span class="n">table_list</span><span class="p">])</span> <span class="o">+</span>
+        <span class="s1">&#39;&lt;/tr &gt;&#39;</span> <span class="o">+</span>
+<span class="c1">#         &#39;&lt;tr&gt;&lt;td rowspan=&quot;3&quot; style=&quot;text-align:center;&quot;&gt;Left data&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/td&gt;&lt;td rowspan=&quot;4&quot; style=&quot;text-align:center;&quot;&gt;Right data&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/td&gt;&lt;/tr&gt;&#39; +        </span>
+        <span class="s1">&#39;&lt;tr &gt;&lt;/tr&gt;&lt;tr &gt;&lt;/tr&gt;&lt;tr &gt;&lt;/tr&gt;&lt;tr &gt;  &#39;</span> <span class="o">+</span>        
+        <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s1">&#39;&lt;td&gt;&#39;</span> <span class="o">+</span> <span class="n">table</span><span class="o">.</span><span class="n">_repr_html_</span><span class="p">()</span> <span class="o">+</span> 
+                 <span class="s1">&#39;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/td&gt;&#39;</span> 
+                 <span class="k">for</span> <span class="n">table</span> <span class="ow">in</span> <span class="n">table_list</span><span class="p">])</span> <span class="o">+</span>
+        <span class="s1">&#39;&lt;/tr&gt;&lt;/table&gt;&#39;</span>
+    <span class="p">)</span>
 
-<span class="p">(</span><span class="n">baby_names</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s1">&#39;year&#39;</span><span class="p">,</span><span class="s1">&#39;sex&#39;</span><span class="p">,</span><span class="s1">&#39;count&#39;</span><span class="p">],</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="c1"># sort descending so most popular name first</span>
-     <span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;year&#39;</span><span class="p">,</span><span class="s1">&#39;sex&#39;</span><span class="p">])</span> <span class="c1"># group by year and gender </span>
-     <span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">return_first_element</span><span class="p">)</span> <span class="c1"># keep the first (most popular) name each year</span>
-     <span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="c1"># keep only the name variable</span>
-     <span class="o">.</span><span class="n">unstack</span><span class="p">()</span> <span class="c1"># format wide</span>
-     <span class="p">[</span><span class="o">-</span><span class="mi">20</span><span class="p">:]</span>
-<span class="p">)</span>
+<span class="n">multi_table</span><span class="p">([</span><span class="n">left_df</span><span class="p">,</span><span class="n">right_df</span><span class="p">])</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>sex</th>
-      <th>F</th>
-      <th>M</th>
-    </tr>
-    <tr>
-      <th>year</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>1999</th>
-      <td>Emily</td>
-      <td>Jacob</td>
-    </tr>
-    <tr>
-      <th>2000</th>
-      <td>Emily</td>
-      <td>Jacob</td>
-    </tr>
-    <tr>
-      <th>2001</th>
-      <td>Emily</td>
-      <td>Jacob</td>
-    </tr>
-    <tr>
-      <th>2002</th>
-      <td>Emily</td>
-      <td>Jacob</td>
-    </tr>
-    <tr>
-      <th>2003</th>
-      <td>Emily</td>
-      <td>Jacob</td>
-    </tr>
-    <tr>
-      <th>2004</th>
-      <td>Emily</td>
-      <td>Jacob</td>
-    </tr>
-    <tr>
-      <th>2005</th>
-      <td>Emily</td>
-      <td>Jacob</td>
-    </tr>
-    <tr>
-      <th>2006</th>
-      <td>Emily</td>
-      <td>Jacob</td>
-    </tr>
-    <tr>
-      <th>2007</th>
-      <td>Emily</td>
-      <td>Jacob</td>
-    </tr>
-    <tr>
-      <th>2008</th>
-      <td>Emma</td>
-      <td>Jacob</td>
-    </tr>
-    <tr>
-      <th>2009</th>
-      <td>Isabella</td>
-      <td>Jacob</td>
-    </tr>
-    <tr>
-      <th>2010</th>
-      <td>Isabella</td>
-      <td>Jacob</td>
-    </tr>
-    <tr>
-      <th>2011</th>
-      <td>Sophia</td>
-      <td>Jacob</td>
-    </tr>
-    <tr>
-      <th>2012</th>
-      <td>Sophia</td>
-      <td>Jacob</td>
-    </tr>
-    <tr>
-      <th>2013</th>
-      <td>Sophia</td>
-      <td>Noah</td>
-    </tr>
-    <tr>
-      <th>2014</th>
-      <td>Emma</td>
-      <td>Noah</td>
-    </tr>
-    <tr>
-      <th>2015</th>
-      <td>Emma</td>
-      <td>Noah</td>
-    </tr>
-    <tr>
-      <th>2016</th>
-      <td>Emma</td>
-      <td>Noah</td>
-    </tr>
-    <tr>
-      <th>2017</th>
-      <td>Emma</td>
-      <td>Liam</td>
-    </tr>
-    <tr>
-      <th>2018</th>
-      <td>Emma</td>
-      <td>Liam</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 </div>
 

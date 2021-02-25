@@ -395,6 +395,25 @@
     <i class="fas fa-chevron-down">
     </i>
    </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="05a-otherskills.html">
+     3.4. Other (Important) Data Wrangling Skills
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="05b_merging.html">
+       3.4.1. Merging
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="05c_missingdata.html">
+       3.4.2. Dealing with Missing Data
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
   </ul>
   <i class="fas fa-chevron-down">
   </i>
@@ -516,13 +535,18 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#explorating-covariances-relationships-between-variables">
-   3.3.4.3. Explorating covariances/relationships between variables
+  <a class="reference internal nav-link" href="#distributions">
+   3.3.4.3. Distributions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#covariances-relationships-between-variables">
+   3.3.4.4. Covariances/relationships between variables
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#getting-the-big-picture-with-pairplot">
-     3.3.4.3.1. Getting the big picture with
+     3.3.4.4.1. Getting the big picture with
      <strong>
       Pairplot
      </strong>
@@ -530,7 +554,7 @@
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#getting-the-big-picture-with-heatmap-with-correlations">
-     3.3.4.3.2. Getting the big picture with
+     3.3.4.4.2. Getting the big picture with
      <strong>
       Heatmap with correlations
      </strong>
@@ -538,7 +562,7 @@
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#digging-in-with-lmplot-and-jointplot">
-     3.3.4.3.3. Digging in with
+     3.3.4.4.3. Digging in with
      <strong>
       lmplot
      </strong>
@@ -625,58 +649,58 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><style  type="text/css" >
-</style><table id="T_389fd170_74c3_11eb_bfc3_f875a431d9f9" ><thead>    <tr>        <th class="blank level0" ></th>        <th class="col_heading level0 col0" >% missing</th>    </tr></thead><tbody>
+</style><table id="T_4b737d35_7782_11eb_bc5d_f875a431d9f9" ><thead>    <tr>        <th class="blank level0" ></th>        <th class="col_heading level0 col0" >% missing</th>    </tr></thead><tbody>
                 <tr>
-                        <th id="T_389fd170_74c3_11eb_bfc3_f875a431d9f9level0_row0" class="row_heading level0 row0" >privdelaycon</th>
-                        <td id="T_389fd170_74c3_11eb_bfc3_f875a431d9f9row0_col0" class="data row0 col0" >74.4</td>
+                        <th id="T_4b737d35_7782_11eb_bc5d_f875a431d9f9level0_row0" class="row_heading level0 row0" >privdelaycon</th>
+                        <td id="T_4b737d35_7782_11eb_bc5d_f875a431d9f9row0_col0" class="data row0 col0" >74.4</td>
             </tr>
             <tr>
-                        <th id="T_389fd170_74c3_11eb_bfc3_f875a431d9f9level0_row1" class="row_heading level0 row1" >debtdelaycon</th>
-                        <td id="T_389fd170_74c3_11eb_bfc3_f875a431d9f9row1_col0" class="data row1 col0" >74.4</td>
+                        <th id="T_4b737d35_7782_11eb_bc5d_f875a431d9f9level0_row1" class="row_heading level0 row1" >debtdelaycon</th>
+                        <td id="T_4b737d35_7782_11eb_bc5d_f875a431d9f9row1_col0" class="data row1 col0" >74.4</td>
             </tr>
             <tr>
-                        <th id="T_389fd170_74c3_11eb_bfc3_f875a431d9f9level0_row2" class="row_heading level0 row2" >equitydelaycon</th>
-                        <td id="T_389fd170_74c3_11eb_bfc3_f875a431d9f9row2_col0" class="data row2 col0" >74.4</td>
+                        <th id="T_4b737d35_7782_11eb_bc5d_f875a431d9f9level0_row2" class="row_heading level0 row2" >equitydelaycon</th>
+                        <td id="T_4b737d35_7782_11eb_bc5d_f875a431d9f9row2_col0" class="data row2 col0" >74.4</td>
             </tr>
             <tr>
-                        <th id="T_389fd170_74c3_11eb_bfc3_f875a431d9f9level0_row3" class="row_heading level0 row3" >delaycon</th>
-                        <td id="T_389fd170_74c3_11eb_bfc3_f875a431d9f9row3_col0" class="data row3 col0" >74.4</td>
+                        <th id="T_4b737d35_7782_11eb_bc5d_f875a431d9f9level0_row3" class="row_heading level0 row3" >delaycon</th>
+                        <td id="T_4b737d35_7782_11eb_bc5d_f875a431d9f9row3_col0" class="data row3 col0" >74.4</td>
             </tr>
             <tr>
-                        <th id="T_389fd170_74c3_11eb_bfc3_f875a431d9f9level0_row4" class="row_heading level0 row4" >prodmktfluid</th>
-                        <td id="T_389fd170_74c3_11eb_bfc3_f875a431d9f9row4_col0" class="data row4 col0" >60.4</td>
+                        <th id="T_4b737d35_7782_11eb_bc5d_f875a431d9f9level0_row4" class="row_heading level0 row4" >prodmktfluid</th>
+                        <td id="T_4b737d35_7782_11eb_bc5d_f875a431d9f9row4_col0" class="data row4 col0" >60.4</td>
             </tr>
             <tr>
-                        <th id="T_389fd170_74c3_11eb_bfc3_f875a431d9f9level0_row5" class="row_heading level0 row5" >tnic3tsimm</th>
-                        <td id="T_389fd170_74c3_11eb_bfc3_f875a431d9f9row5_col0" class="data row5 col0" >56.5</td>
+                        <th id="T_4b737d35_7782_11eb_bc5d_f875a431d9f9level0_row5" class="row_heading level0 row5" >tnic3tsimm</th>
+                        <td id="T_4b737d35_7782_11eb_bc5d_f875a431d9f9row5_col0" class="data row5 col0" >56.5</td>
             </tr>
             <tr>
-                        <th id="T_389fd170_74c3_11eb_bfc3_f875a431d9f9level0_row6" class="row_heading level0 row6" >tnic3hhi</th>
-                        <td id="T_389fd170_74c3_11eb_bfc3_f875a431d9f9row6_col0" class="data row6 col0" >56.5</td>
+                        <th id="T_4b737d35_7782_11eb_bc5d_f875a431d9f9level0_row6" class="row_heading level0 row6" >tnic3hhi</th>
+                        <td id="T_4b737d35_7782_11eb_bc5d_f875a431d9f9row6_col0" class="data row6 col0" >56.5</td>
             </tr>
             <tr>
-                        <th id="T_389fd170_74c3_11eb_bfc3_f875a431d9f9level0_row7" class="row_heading level0 row7" >largetaxlosscarry</th>
-                        <td id="T_389fd170_74c3_11eb_bfc3_f875a431d9f9row7_col0" class="data row7 col0" >33.5</td>
+                        <th id="T_4b737d35_7782_11eb_bc5d_f875a431d9f9level0_row7" class="row_heading level0 row7" >largetaxlosscarry</th>
+                        <td id="T_4b737d35_7782_11eb_bc5d_f875a431d9f9row7_col0" class="data row7 col0" >33.5</td>
             </tr>
             <tr>
-                        <th id="T_389fd170_74c3_11eb_bfc3_f875a431d9f9level0_row8" class="row_heading level0 row8" >smalltaxlosscarry</th>
-                        <td id="T_389fd170_74c3_11eb_bfc3_f875a431d9f9row8_col0" class="data row8 col0" >33.5</td>
+                        <th id="T_4b737d35_7782_11eb_bc5d_f875a431d9f9level0_row8" class="row_heading level0 row8" >smalltaxlosscarry</th>
+                        <td id="T_4b737d35_7782_11eb_bc5d_f875a431d9f9row8_col0" class="data row8 col0" >33.5</td>
             </tr>
             <tr>
-                        <th id="T_389fd170_74c3_11eb_bfc3_f875a431d9f9level0_row9" class="row_heading level0 row9" >invopps_FG09</th>
-                        <td id="T_389fd170_74c3_11eb_bfc3_f875a431d9f9row9_col0" class="data row9 col0" >13.0</td>
+                        <th id="T_4b737d35_7782_11eb_bc5d_f875a431d9f9level0_row9" class="row_heading level0 row9" >invopps_FG09</th>
+                        <td id="T_4b737d35_7782_11eb_bc5d_f875a431d9f9row9_col0" class="data row9 col0" >13.0</td>
             </tr>
             <tr>
-                        <th id="T_389fd170_74c3_11eb_bfc3_f875a431d9f9level0_row10" class="row_heading level0 row10" >short_debt</th>
-                        <td id="T_389fd170_74c3_11eb_bfc3_f875a431d9f9row10_col0" class="data row10 col0" >12.8</td>
+                        <th id="T_4b737d35_7782_11eb_bc5d_f875a431d9f9level0_row10" class="row_heading level0 row10" >short_debt</th>
+                        <td id="T_4b737d35_7782_11eb_bc5d_f875a431d9f9row10_col0" class="data row10 col0" >12.8</td>
             </tr>
             <tr>
-                        <th id="T_389fd170_74c3_11eb_bfc3_f875a431d9f9level0_row11" class="row_heading level0 row11" >sales_g</th>
-                        <td id="T_389fd170_74c3_11eb_bfc3_f875a431d9f9row11_col0" class="data row11 col0" >11.8</td>
+                        <th id="T_4b737d35_7782_11eb_bc5d_f875a431d9f9level0_row11" class="row_heading level0 row11" >sales_g</th>
+                        <td id="T_4b737d35_7782_11eb_bc5d_f875a431d9f9row11_col0" class="data row11 col0" >11.8</td>
             </tr>
             <tr>
-                        <th id="T_389fd170_74c3_11eb_bfc3_f875a431d9f9level0_row12" class="row_heading level0 row12" >l_laborratio</th>
-                        <td id="T_389fd170_74c3_11eb_bfc3_f875a431d9f9row12_col0" class="data row12 col0" >10.4</td>
+                        <th id="T_4b737d35_7782_11eb_bc5d_f875a431d9f9level0_row12" class="row_heading level0 row12" >l_laborratio</th>
+                        <td id="T_4b737d35_7782_11eb_bc5d_f875a431d9f9row12_col0" class="data row12 col0" >10.4</td>
             </tr>
     </tbody></table></div></div>
 </div>
@@ -703,11 +727,119 @@
 </div>
 </div>
 </div>
-<div class="section" id="explorating-covariances-relationships-between-variables">
-<h2><span class="section-number">3.3.4.3. </span>Explorating covariances/relationships between variables<a class="headerlink" href="#explorating-covariances-relationships-between-variables" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="distributions">
+<h2><span class="section-number">3.3.4.3. </span>Distributions<a class="headerlink" href="#distributions" title="Permalink to this headline">¶</a></h2>
+<p>Among the first things I do with new data, besides the statistical EDA <a class="reference internal" href="02e_eda_golden.html"><span class="doc std std-doc">we covered in the Pandas section</span></a>, is plot the distribution of each variable to get a sense of the data.</p>
+<p>I generally want to know</p>
+<ol class="simple">
+<li><p>If a variable is numerical</p>
+<ol class="simple">
+<li><p>How many variables are missing and is it systematic (like in the example above)?</p></li>
+<li><p>Is it continuous or discrete?</p></li>
+<li><p>What is the shape of a distribution (normal, binary, skewed left, skewed right, fat-tailed, etc.)?</p></li>
+<li><p>How prevalent are outliers?</p></li>
+</ol>
+</li>
+<li><p>If a variable is categorical</p>
+<ol class="simple">
+<li><p>What are the common values?</p></li>
+<li><p>Are the averages of numerical variables different for different categories?</p></li>
+</ol>
+</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Remember the <code class="docutils literal notranslate"><span class="pre">gsector</span></code> variable! Just because a variable is a “number” doesn’t mean the numbers have a mathematical meaning!</p>
+</div>
+<p>Four functions come in handy as a starting point, and you should look at their documentation and the example galleries: <a class="reference external" href="https://seaborn.pydata.org/generated/seaborn.displot.html"><code class="docutils literal notranslate"><span class="pre">sns.displot</span></code></a>, <a class="reference external" href="https://seaborn.pydata.org/generated/seaborn.boxplot.html"><code class="docutils literal notranslate"><span class="pre">sns.boxplot</span></code></a>, <a class="reference external" href="https://seaborn.pydata.org/generated/seaborn.catplot.html"><code class="docutils literal notranslate"><span class="pre">sns.catplot</span></code></a>, and the built in pandas plot function <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.plot.html"><code class="docutils literal notranslate"><span class="pre">df[&lt;columnName&gt;].plot()</span></code></a></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ol class="simple">
+<li><p>Quick syntax help: Remember to type <kbd>SHIFT</kbd> + <kbd>TAB</kbd> when the cursor inside a function!</p></li>
+<li><p>Better syntax help: Go the official seaborn page for your function and look at the examples to figure out what argument creates the change you want.</p></li>
+</ol>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">displot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">ccm</span><span class="p">,</span>
+            <span class="n">x</span><span class="o">=</span><span class="s1">&#39;td_a&#39;</span><span class="p">,</span>
+            <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;kde&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;A density (kind=&quot;kde&quot;) graph&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">displot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">ccm</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;td_a &lt; 1 &amp; td_a &gt; 0&#39;</span><span class="p">),</span>
+            <span class="n">x</span><span class="o">=</span><span class="s1">&#39;td_a&#39;</span><span class="p">,</span>
+            <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;kde&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Used .query() to filter outliers&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">displot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">ccm</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;td_a &lt; 1 &amp; td_a &gt; 0&#39;</span><span class="p">),</span>
+            <span class="n">x</span><span class="o">=</span><span class="s1">&#39;td_a&#39;</span><span class="p">,</span> 
+            <span class="c1"># kind=hist is the default, so I&#39;m not even typing it</span>
+            <span class="n">kde</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;kind=&quot;hist&quot;, kde=True --&gt; histogram + kde&#39;</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/04e-visualEDA_7_0.png" src="../../_images/04e-visualEDA_7_0.png" />
+<img alt="../../_images/04e-visualEDA_7_1.png" src="../../_images/04e-visualEDA_7_1.png" />
+<img alt="../../_images/04e-visualEDA_7_2.png" src="../../_images/04e-visualEDA_7_2.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">ccm</span><span class="p">,</span> 
+            <span class="n">x</span><span class="o">=</span><span class="s1">&#39;td_a&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Outliers can distort graph until useless&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">ccm</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;td_a &lt; 1 &amp; td_a &gt; 0&#39;</span><span class="p">),</span> 
+            <span class="n">x</span><span class="o">=</span><span class="s1">&#39;td_a&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;With query, outliers are filtered, main patterns visible&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/04e-visualEDA_8_0.png" src="../../_images/04e-visualEDA_8_0.png" />
+<img alt="../../_images/04e-visualEDA_8_1.png" src="../../_images/04e-visualEDA_8_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">displot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">ccm</span><span class="p">,</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;div_d&#39;</span><span class="p">,</span> <span class="n">kde</span><span class="o">=</span><span class="kc">True</span>
+           <span class="p">)</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;div_d is a binary variable: Does the firm pay dividends?&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/04e-visualEDA_9_0.png" src="../../_images/04e-visualEDA_9_0.png" />
+</div>
+</div>
+<p>To visualize the counts of categorical variables, I’d just use pandas:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># sns.catplot is powerful, but it&#39;s overkill for a categorical count</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">catplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">ccm</span><span class="p">,</span>
+            <span class="n">x</span><span class="o">=</span><span class="s1">&#39;gsector&#39;</span><span class="p">,</span>
+            <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;count&#39;</span><span class="p">,</span>
+            <span class="n">order</span> <span class="o">=</span> <span class="n">ccm</span><span class="p">[</span><span class="s1">&#39;gsector&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># pandas built in plot is much easier:</span>
+<span class="n">ccm</span><span class="p">[</span><span class="s1">&#39;gsector&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/04e-visualEDA_11_0.png" src="../../_images/04e-visualEDA_11_0.png" />
+<img alt="../../_images/04e-visualEDA_11_1.png" src="../../_images/04e-visualEDA_11_1.png" />
+</div>
+</div>
+<p>But <code class="docutils literal notranslate"><span class="pre">sns.catplot</span></code> is a really useful function to look at other distributional statistics for different groups!</p>
+</div>
+<div class="section" id="covariances-relationships-between-variables">
+<h2><span class="section-number">3.3.4.4. </span>Covariances/relationships between variables<a class="headerlink" href="#covariances-relationships-between-variables" title="Permalink to this headline">¶</a></h2>
 <p>To get a quick sense of relationships, I like to use I like to use <code class="docutils literal notranslate"><span class="pre">pairplot</span></code> and <code class="docutils literal notranslate"><span class="pre">heatmap</span></code> to get a quick since of relationships.</p>
 <div class="section" id="getting-the-big-picture-with-pairplot">
-<h3><span class="section-number">3.3.4.3.1. </span>Getting the big picture with <a class="reference external" href="https://seaborn.pydata.org/generated/seaborn.pairplot.html"><strong>Pairplot</strong></a><a class="headerlink" href="#getting-the-big-picture-with-pairplot" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.3.4.4.1. </span>Getting the big picture with <a class="reference external" href="https://seaborn.pydata.org/generated/seaborn.pairplot.html"><strong>Pairplot</strong></a><a class="headerlink" href="#getting-the-big-picture-with-pairplot" title="Permalink to this headline">¶</a></h3>
 <p>I like passing <code class="docutils literal notranslate"><span class="pre">corner=True</span></code> or using the <code class="docutils literal notranslate"><span class="pre">x_vars</span></code> and <code class="docutils literal notranslate"><span class="pre">y_vars</span></code> parameters to make the info shown more usable.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -732,13 +864,13 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/04e-visualEDA_7_0.png" src="../../_images/04e-visualEDA_7_0.png" />
-<img alt="../../_images/04e-visualEDA_7_1.png" src="../../_images/04e-visualEDA_7_1.png" />
+<img alt="../../_images/04e-visualEDA_14_0.png" src="../../_images/04e-visualEDA_14_0.png" />
+<img alt="../../_images/04e-visualEDA_14_1.png" src="../../_images/04e-visualEDA_14_1.png" />
 </div>
 </div>
 </div>
 <div class="section" id="getting-the-big-picture-with-heatmap-with-correlations">
-<h3><span class="section-number">3.3.4.3.2. </span>Getting the big picture with <a class="reference external" href="https://seaborn.pydata.org/generated/seaborn.pairplot.html"><strong>Heatmap with correlations</strong></a><a class="headerlink" href="#getting-the-big-picture-with-heatmap-with-correlations" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.3.4.4.2. </span>Getting the big picture with <a class="reference external" href="https://seaborn.pydata.org/generated/seaborn.pairplot.html"><strong>Heatmap with correlations</strong></a><a class="headerlink" href="#getting-the-big-picture-with-heatmap-with-correlations" title="Permalink to this headline">¶</a></h3>
 <p>After some pairplots (and often before), I like to look at correlations.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -1746,7 +1878,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/04e-visualEDA_11_0.png" src="../../_images/04e-visualEDA_11_0.png" />
+<img alt="../../_images/04e-visualEDA_18_0.png" src="../../_images/04e-visualEDA_18_0.png" />
 </div>
 </div>
 <p>Cleaning that and making it more useful is easy:</p>
@@ -1775,7 +1907,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/04e-visualEDA_13_0.png" src="../../_images/04e-visualEDA_13_0.png" />
+<img alt="../../_images/04e-visualEDA_20_0.png" src="../../_images/04e-visualEDA_20_0.png" />
 </div>
 </div>
 <p>That is an information DENSE figure, but we somehow managed to get it on screen decently! Still, it’s a ton of variables, and doing this in parts would be a good idea.</p>
@@ -1786,7 +1918,7 @@
 <p>Also - don’t take these correlations as gospel yet: They should <em>point</em> you towards further relationships to explore, which you should do one plot at a time.</p>
 </div>
 <div class="section" id="digging-in-with-lmplot-and-jointplot">
-<h3><span class="section-number">3.3.4.3.3. </span>Digging in with <a class="reference external" href="https://seaborn.pydata.org/generated/seaborn.relplot.html"><strong>lmplot</strong></a> and <a class="reference external" href="https://seaborn.pydata.org/generated/seaborn.jointplot.html"><strong>Jointplot</strong></a><a class="headerlink" href="#digging-in-with-lmplot-and-jointplot" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.3.4.4.3. </span>Digging in with <a class="reference external" href="https://seaborn.pydata.org/generated/seaborn.relplot.html"><strong>lmplot</strong></a> and <a class="reference external" href="https://seaborn.pydata.org/generated/seaborn.jointplot.html"><strong>Jointplot</strong></a><a class="headerlink" href="#digging-in-with-lmplot-and-jointplot" title="Permalink to this headline">¶</a></h3>
 <p>These are good for digging into the relationships between two continuous variables.</p>
 <p>Let’s dig into a strong correlation suggested by our heatmap.</p>
 <div class="admonition warning">
@@ -1811,12 +1943,12 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/04e-visualEDA_16_0.png" src="../../_images/04e-visualEDA_16_0.png" />
-<img alt="../../_images/04e-visualEDA_16_1.png" src="../../_images/04e-visualEDA_16_1.png" />
+<img alt="../../_images/04e-visualEDA_23_0.png" src="../../_images/04e-visualEDA_23_0.png" />
+<img alt="../../_images/04e-visualEDA_23_1.png" src="../../_images/04e-visualEDA_23_1.png" />
 </div>
 </div>
 <p>I’d pencil this as a relationship to look into more (Do firms do more R&amp;D <em><strong>because</strong></em> of the fluidity of their product market?) and then continue exploring.</p>
-<p><code class="docutils literal notranslate"><span class="pre">lmplot</span></code> will plot regressions as well, but it makes it easy add facets to see if the relationship depends on a third (categorical) variable with the <code class="docutils literal notranslate"><span class="pre">hue</span></code>, <code class="docutils literal notranslate"><span class="pre">col</span></code>, and <code class="docutils literal notranslate"><span class="pre">row</span></code> parameters. (And you can combine <code class="docutils literal notranslate"><span class="pre">hue</span></code>, <code class="docutils literal notranslate"><span class="pre">col</span></code>, and <code class="docutils literal notranslate"><span class="pre">row</span></code> to see several cuts!)</p>
+<p><code class="docutils literal notranslate"><span class="pre">lmplot</span></code> will plot regressions as well, but it makes it easy add <a class="reference internal" href="04d-whichplot.html"><span class="doc std std-doc">facets</span></a> to see if the relationship depends on a third (categorical) variable with the <code class="docutils literal notranslate"><span class="pre">hue</span></code>, <code class="docutils literal notranslate"><span class="pre">col</span></code>, and <code class="docutils literal notranslate"><span class="pre">row</span></code> parameters. (And you can combine <code class="docutils literal notranslate"><span class="pre">hue</span></code>, <code class="docutils literal notranslate"><span class="pre">col</span></code>, and <code class="docutils literal notranslate"><span class="pre">row</span></code> to see several cuts!)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f3</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">lmplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">ccm</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;xrd_a&lt;.4 &amp; xrd_a &gt; 0&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">1000</span><span class="p">),</span>
@@ -1827,8 +1959,8 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/04e-visualEDA_18_0.png" src="../../_images/04e-visualEDA_18_0.png" />
-<img alt="../../_images/04e-visualEDA_18_1.png" src="../../_images/04e-visualEDA_18_1.png" />
+<img alt="../../_images/04e-visualEDA_25_0.png" src="../../_images/04e-visualEDA_25_0.png" />
+<img alt="../../_images/04e-visualEDA_25_1.png" src="../../_images/04e-visualEDA_25_1.png" />
 </div>
 </div>
 </div>
