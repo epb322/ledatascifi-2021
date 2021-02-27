@@ -545,6 +545,10 @@
                 
   <div class="section" id="temporary-vs-permanent-methods">
 <h1><span class="section-number">3.2.4. </span>Temporary vs. Permanent Methods<a class="headerlink" href="#temporary-vs-permanent-methods" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This page is especially useful in the context of developing code. While I’m figuring out a step, I rarely save the output to my original data - I use temporary methods and print the output. Once I know it’s right, I make the changes permanent and proceed.</p>
+</div>
 <div class="section" id="temporary-methods">
 <h2><span class="section-number">3.2.4.1. </span>Temporary Methods<a class="headerlink" href="#temporary-methods" title="Permalink to this headline">¶</a></h2>
 <p>When you use a method on an object (e.g. a DataFrame) in python, <code class="docutils literal notranslate"><span class="pre">&lt;object&gt;.&lt;method&gt;(&lt;args&gt;)</span></code> performs the method on the object and returns the modified object, as you can see here:</p>
@@ -634,7 +638,10 @@
 </div>
 <div class="section" id="permanent-changes">
 <h2><span class="section-number">3.2.4.2. </span>Permanent changes<a class="headerlink" href="#permanent-changes" title="Permalink to this headline">¶</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
 <p>If you want to change the object permanently, you have two options<a class="footnote-reference brackets" href="#caveat" id="id1">1</a></p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># option 1: explicitly define the df as the prior df after the method was called</span>

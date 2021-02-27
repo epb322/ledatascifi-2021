@@ -567,9 +567,10 @@
 <h1><span class="section-number">3.2.6. </span>Using “method chains” to create more readable code<a class="headerlink" href="#using-method-chains-to-create-more-readable-code" title="Permalink to this headline">¶</a></h1>
 <p>This page is about “chaining,” which is a <em>technique</em> (as opposed to a function) I use when writing python code, to take advantage of this fact about python:</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="p">(</span> 
-    <span class="c1"># anything between these parens</span>
+    <span class="c1"># anything between these parentheses</span>
     <span class="c1"># is interpreted as one line of code</span>
-    <span class="c1"># --&gt; long lines of code can be visually broken up</span>
+    <span class="c1"># so that long lines of code can be visually broken up</span>
+    <span class="c1"># and chunks of code (doing a set of tasks) can be grouped</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -580,6 +581,7 @@
 <li><p>lessen the need to create and mentally track temporary variables</p></li>
 <li><p>are easy to debug: comment out operations that are failing until you fix them</p></li>
 <li><p>you can have comments <em>within</em> the chains (like the example above!)</p></li>
+<li><p>only temporarily modify the object, unless you name the object (like <code class="docutils literal notranslate"><span class="pre">name</span> <span class="pre">=</span> <span class="pre">(</span> <span class="pre">...</span> <span class="pre">)</span></code>)</p></li>
 </ul>
 <div class="warning admonition">
 <p class="admonition-title">Let’s learn about chains via example.</p>
@@ -631,8 +633,8 @@
 <li><p>save the dataset and then call a plot function</p></li>
 </ol>
 <div class="tabbed-set docutils">
-<input checked="checked" id="ff1a94fa-05af-4542-b7b5-b76143ae0814" name="0eb428c8-6e79-45f8-a811-bdca9e2a6c8a" type="radio">
-</input><label class="tabbed-label" for="ff1a94fa-05af-4542-b7b5-b76143ae0814">
+<input checked="checked" id="f9633840-4b0f-440e-87d2-606f37bfc1aa" name="0053410b-6973-470f-b99c-d7234f4d96b0" type="radio">
+</input><label class="tabbed-label" for="f9633840-4b0f-440e-87d2-606f37bfc1aa">
 v0.1 Without chains</label><div class="tabbed-content docutils">
 <p>On one hand, this is only 4 lines of code. On the other hand, this is as readable as I could make it!</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="c1"># STEP 1: restrict by name and only keep years after 2000</span>
@@ -663,8 +665,8 @@ v0.1 Without chains</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="c323f848-b605-4f64-86da-788459718ca1" name="0eb428c8-6e79-45f8-a811-bdca9e2a6c8a" type="radio">
-</input><label class="tabbed-label" for="c323f848-b605-4f64-86da-788459718ca1">
+<input id="05da8d4b-4123-417c-92be-6e44b1b8daa1" name="0053410b-6973-470f-b99c-d7234f4d96b0" type="radio">
+</input><label class="tabbed-label" for="05da8d4b-4123-417c-92be-6e44b1b8daa1">
 v0.2 No chains but better</label><div class="tabbed-content docutils">
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -681,8 +683,8 @@ v0.2 No chains but better</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="e9dc0c71-a410-4b57-a9ba-cdf868fb7b69" name="0eb428c8-6e79-45f8-a811-bdca9e2a6c8a" type="radio">
-</input><label class="tabbed-label" for="e9dc0c71-a410-4b57-a9ba-cdf868fb7b69">
+<input id="a328ed80-a3f3-498b-8812-bc45a19f9ddc" name="0053410b-6973-470f-b99c-d7234f4d96b0" type="radio">
+</input><label class="tabbed-label" for="a328ed80-a3f3-498b-8812-bc45a19f9ddc">
 v1.0 - Using chains instead</label><div class="tabbed-content docutils">
 <p><strong>Method chaining:</strong> Call the object (<code class="docutils literal notranslate"><span class="pre">baby_names</span></code>) and then keep calling one method on it after another.</p>
 <ul class="simple">
@@ -711,8 +713,8 @@ The code below produces a plot identical to V1 and V2, <strong>but it is unreada
 </pre></div>
 </div>
 </div>
-<input id="5ddcc4d5-b668-4f27-a264-e8fad81f7bfb" name="0eb428c8-6e79-45f8-a811-bdca9e2a6c8a" type="radio">
-</input><label class="tabbed-label" for="5ddcc4d5-b668-4f27-a264-e8fad81f7bfb">
+<input id="133752c8-4f80-43cf-96de-9359580c7034" name="0053410b-6973-470f-b99c-d7234f4d96b0" type="radio">
+</input><label class="tabbed-label" for="133752c8-4f80-43cf-96de-9359580c7034">
 v1.1 Pretty Chains</label><div class="tabbed-content docutils">
 <p>To make this readable, we write a parentheses over multiple lines</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
@@ -792,40 +794,23 @@ v1.1 Pretty Chains</label><div class="tabbed-content docutils">
 <div class="section" id="summary-tips-and-techniques">
 <h2><span class="section-number">3.2.6.6. </span>Summary, Tips, and Techniques<a class="headerlink" href="#summary-tips-and-techniques" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>Summary: In a chain</p>
+<li><p>Summary:</p>
 <ul>
-<li><p>You can use any valid method for the object that comes before</p></li>
-<li><p>You can add comments</p></li>
+<li><p>In a method chain, you can use any valid method for the object that comes before</p></li>
+<li><p>Between two parentheses, you can break a long chain up, and add comments for readability</p></li>
 </ul>
 </li>
-<li><p>Do you want to</p>
+<li><p>You’re writing a chain. Do you want to:</p>
 <ul>
 <li><p>Create a variable? Use <code class="docutils literal notranslate"><span class="pre">.assign(&lt;newvariablename&gt;</span> <span class="pre">=</span> <span class="pre">&lt;some</span> <span class="pre">function&gt;)</span></code></p></li>
-<li><p>Rename a variable? Use `.rename(columns={‘<oldName>’ : ‘<newName>’})</p></li>
+<li><p>Rename a variable? Use <code class="docutils literal notranslate"><span class="pre">.rename(columns={'&lt;oldName&gt;'</span> <span class="pre">:</span> <span class="pre">'&lt;newName&gt;'})</span></code></p></li>
 <li><p>Use a non-pandas function (e.g. plotting, like above) on a pandas object? Use <code class="docutils literal notranslate"><span class="pre">.pipe(&lt;&gt;)</span></code></p></li>
-<li><p>See the <a class="reference internal" href="02c_commonFcns.html"><span class="doc std std-doc">common functions</span></a> and <a class="reference internal" href="02g_commontasks.html"><span class="doc std std-doc">task</span></a> pages for more</p></li>
 </ul>
 </li>
 </ul>
-<div class="tip admonition">
-<p class="admonition-title">LAMBDA FUNCTIONS</p>
-<p>You will see this inside pandas chains a lot: <code class="docutils literal notranslate"><span class="pre">.assign(newVar</span> <span class="pre">=</span> <span class="pre">lambda</span> <span class="pre">x:</span> <span class="pre">someFunc(x))</span></code>, e.g.:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">.assign(height_feet</span> <span class="pre">=</span> <span class="pre">lambda</span> <span class="pre">x:</span> <span class="pre">x['height_inch']//12)</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">.assign(lev</span> <span class="pre">=</span> <span class="pre">lambda</span> <span class="pre">x:</span> <span class="pre">(x['dltt']+x['dlc'])/x['at']</span>&#160; <span class="pre">)</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">.roupby('industry').assign(avglev</span> <span class="pre">=</span> <span class="pre">lambda</span> <span class="pre">x:</span> <span class="pre">x['lev'].mean()</span>&#160; <span class="pre">)</span></code></p></li>
-</ul>
-<p>Why? Sometimes, when you get to the “assign” step, what you would do to reference a variable is type the dataframe name and the variable name.</p>
-<p><strong>But often, the dataframe name doesn’t exist yet. So how do you refer to the unnamed dataframe object?</strong></p>
-<p>A: Lambda functions. When you type <code class="docutils literal notranslate"><span class="pre">.assign(newVar</span> <span class="pre">=</span> <span class="pre">lambda</span> <span class="pre">x:</span> <span class="pre">someFunc(x))</span></code>, x is the object that assign is working on. Ta da!</p>
-<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="c1"># common syntax within pandas</span>
-<span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">newvarname</span> <span class="o">=</span> <span class="k">lambda</span> <span class="o">&lt;</span><span class="n">tempnameforpriorobj</span><span class="o">&gt;</span><span class="p">:</span>  <span class="o">&lt;</span><span class="n">do</span> <span class="n">stuff</span> <span class="n">to</span> <span class="n">tempnameforpriorobj</span><span class="o">&gt;</span>   <span class="p">)</span>       
-
-<span class="c1"># often, tempname is just &quot;x&quot; for short</span>
-<span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">newvarname</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="o">&gt;</span><span class="p">:</span> <span class="n">someFunc</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">)</span>       
-
-</pre></div>
-</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>See the <a class="reference internal" href="02c_commonFcns.html"><span class="doc std std-doc">common functions</span></a> and <a class="reference internal" href="02g_commontasks.html"><span class="doc std std-doc">common tasks</span></a> pages for more methods you can use in chains and tricks to use within chains (pipe, lambda functions, etc.)!</p>
 </div>
 <hr class="footnotes docutils" />
 <dl class="footnote brackets">
