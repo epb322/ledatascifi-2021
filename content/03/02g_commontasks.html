@@ -650,18 +650,6 @@
 </pre></div>
 </div>
 </div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>To reshape dataframes, you have to work with index and column names.</p>
-</div>
-<p>So before we use <code class="docutils literal notranslate"><span class="pre">stack</span></code> and <code class="docutils literal notranslate"><span class="pre">unstack</span></code> here, put the firm and year into the index.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tall</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">([</span><span class="s1">&#39;Firm&#39;</span><span class="p">,</span><span class="s1">&#39;Year&#39;</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tall:
 </pre></div>
@@ -740,10 +728,16 @@
     </tr>
   </tbody>
 </table>
-</div></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>To reshape dataframes, you have to work with index and column names
-So put the firm and year into the index:
-
-tall = df.set_index([&#39;Firm&#39;,&#39;Year&#39;])
+</div></div></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To reshape dataframes, you have to work with index and column names.</p>
+</div>
+<p>So before we use <code class="docutils literal notranslate"><span class="pre">stack</span></code> and <code class="docutils literal notranslate"><span class="pre">unstack</span></code> here, put the firm and year into the index.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tall</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">([</span><span class="s1">&#39;Firm&#39;</span><span class="p">,</span><span class="s1">&#39;Year&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -1546,13 +1540,13 @@ Sort to firm-year: wide_year.stack().swaplevel().sort_index()
   </thead>
   <tbody>
     <tr>
-      <th>max</th>
-      <td>6.00</td>
+      <th>75%</th>
+      <td>4.750000</td>
       <td>1</td>
     </tr>
     <tr>
-      <th>75%</th>
-      <td>4.75</td>
+      <th>std</th>
+      <td>1.870829</td>
       <td>1</td>
     </tr>
   </tbody>
